@@ -112,11 +112,11 @@ resource "aws_ecs_task_definition" "app" {
       environment = [
         {
           name  = "ENV_VAR1"
-          value = "AWS Community Day"
+          value = "AWS Community Day 2025"
         },
         {
           name  = "ENV_VAR2"
-          value = "Central Asia"
+          value = "Vancouver"
         }
       ]
       secrets = [
@@ -138,7 +138,7 @@ resource "aws_ecs_task_definition" "app" {
         },
         {
           name      = "COUNTRYLIST"
-          valueFrom = "${var.smg_secret_arn}:central_asia_ug_countries::"
+          valueFrom = "${var.smg_secret_arn}:countries::"
         }
       ]
       portMappings = [

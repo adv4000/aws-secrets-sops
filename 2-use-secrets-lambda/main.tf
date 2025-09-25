@@ -1,4 +1,3 @@
-
 resource "aws_lambda_function" "this" {
   function_name    = var.name
   description      = "Created by Terraform"
@@ -14,7 +13,7 @@ resource "aws_lambda_function" "this" {
       SECRET_FROM_PARAMETER_STORE = var.ssm_secret_arn
       SECRET_FROM_SECRETS_MANAGER = var.smg_secret_arn
       ENV_VAR1                    = "AWS Community Day 2025"
-      ENV_VAR2                    = "Central Asia - Kazakhstan"
+      ENV_VAR2                    = "Vancouver"
     }
   }
 }

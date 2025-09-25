@@ -3,7 +3,7 @@
 #
 # Version  Date              Name            Info
 # 1.0      22-August-2025    Denis Astahov   Initial Version
-#
+# 1.1      24-September-2025 Denis Astahov   Updated to YVR
 # ------------------------------------------------------------------------------
 import boto3
 import os
@@ -25,13 +25,13 @@ smg_secret = json.loads(smg_secret)
 
 smg_db_user = smg_secret['masterDB.user']
 smg_db_pass = smg_secret['masterDB.pass']
-countrylist = ssm_secret['central_asia_ug_countries']
+countrylist = ssm_secret['countries']
 
 def lambda_handler(event, context):
     try:
         message = f"""
         <html>
-        <head><title>Demo v1.0 Lambda</title>
+        <head><title>Demo v1.1 Lambda</title>
         </head>
         <body>
         <h1>DEMO: Secrets Utilization on AWS Lambda using boto3!</b></h1><br>
@@ -43,7 +43,7 @@ def lambda_handler(event, context):
             <tr><td>SECRET_FROM_SECRETS_MANAGER</td><td>{smg_secret}</td></tr>
             <tr><td>DB_USER</td>                    <td>{smg_db_user}</td></tr>
             <tr><td>DB_PASS</td>                    <td>{smg_db_pass}</td></tr>
-            <tr><td>COUNTRYLIST</td>                <td>{countrylist}</td></tr>
+            <tr><td>COUNTRIES</td>                  <td>{countrylist}</td></tr>
             <tr><td>ENV_VAR1</td>                   <td>{env_var1}</td></tr>
             <tr><td>ENV_VAR2</td>                   <td>{env_var2}</td></tr>
         </table>
