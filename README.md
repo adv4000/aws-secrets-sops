@@ -2,7 +2,7 @@
 
 
 SOPS Encrypt/Decrypt Secret YAML file using AWS KMS Key:
-```
+```shell
 export SOPS_KMS_ARN="arn:aws:kms:ca-west-1:827611452653:key/064f616f-1a84-4768-a93f"
 sops --encrypt -i secrets-sops.yml 
 sops --decrypt -i secrets-sops.yml
