@@ -14,5 +14,8 @@ DEMOS:
 3. Use Secrets in AWS ECS using Environment Variables/Secrets Reference
 4. Use Secrets in AWS EKS using CSI with Pod Identity
 
+### Demos presented on
+* AWS Community Day Central Asia 2025 [(Almaty, Kazakhstan)](https://community-day.awsug.kz)
+* AWS Communuty Day Vancouver 2025 [(Vancouver, Canada)](https://www.awsday.ca)
 
 Copyleft &copy; by Denis Astahov 2025.
