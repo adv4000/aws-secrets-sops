@@ -27,7 +27,22 @@ resource "helm_release" "aws_secrets_csi_driver_and_ascp" {
   repository = "https://aws.github.io/secrets-store-csi-driver-provider-aws"
   chart      = "secrets-store-csi-driver-provider-aws"
   namespace  = "kube-system"
-  version    = "2.0.0"
+  version    = "2.1.1"
+
+  set = [
+    {
+      name  = "secrets-store-csi-driver.syncSecret.enabled"
+      value = "true"
+    },
+    {
+      name  = "secrets-store-csi-driver.enableSecretRotation"
+      value = "true"
+    },
+    {
+      name  = "secrets-store-csi-driver.rotationPollInterval"
+      value = "60s" # Will Remount Secrets every 60 seconds
+    }
+  ]
 }
 
 # Install PodIdentity Agent
